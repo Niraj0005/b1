@@ -43,6 +43,23 @@
   .navbar-custom{
     background:#fff;
     padding:18px 0;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    transition:padding .3s ease, box-shadow .3s ease;
+  }
+  .navbar-custom.scrolled{
+    padding:8px 0;
+    box-shadow:0 8px 24px rgba(43,35,32,.1);
+  }
+  .navbar-custom.scrolled .brand-logo img,
+  .navbar-custom.scrolled .navbar-brand img{
+    width:60px;
+    transition:width .3s ease;
+  }
+  .navbar-brand img{
+    width:80px;
+    transition:width .3s ease;
   }
   .brand-logo{
     font-family:'Playfair Display',serif;
@@ -107,26 +124,46 @@
   .btn-outline-rose:hover{background:var(--rose-dark);color:#fff;}
 
 
-    @media(max-width:991px){
-    #navMenu{
-      margin-top:16px;
-      border-top:1px solid #f1e4e2;
-      padding-top:14px;
+@media (max-width: 991px) {
+
+    .navbar-collapse{
+        margin-top:15px;
+        border-top:1px solid #f1e4e2;
+        padding-top:15px;
+        max-height:calc(100vh - 90px);
+        overflow-y:auto;
     }
+
     .nav-links{
-      flex-direction:column;
-      align-items:stretch;
-      width:100%;
+        display:flex;
+        flex-direction:column !important;
+        align-items:stretch !important;
+        width:100%;
     }
+
     .nav-links a{
-      margin:0;
-      padding:12px 4px;
-      border-bottom:1px solid #f6ebe9;
-      text-align:center;
-      width:100%;
+        display:block;
+        width:100%;
+        margin:0;
+        padding:12px 15px;
+        text-align:left;   /* Center पाहिजे असेल तर center करा */
+        border-bottom:1px solid #eee;
     }
-    .nav-links a.active::after{display:none;}
-    .nav-links a.active{background:var(--blush);border-radius:8px;}
+
+    .nav-links a:last-child{
+        border-bottom:none;
+    }
+
+    .nav-links a.active{
+        background:#FDECEC;
+        border-radius:6px;
+    }
+
+    .nav-links a.active::after{
+        display:none;
+    }
+}
+/*    .nav-links a.active{background:var(--blush);border-radius:8px;}*/
     .nav-actions{
       flex-direction:column;
       align-items:center;
@@ -243,10 +280,51 @@
   }
   .add-cart-link i{color:var(--rose-dark);margin-left:4px;}
 
-  /* Sale banner */
+  /* CTA / Sale banner */
   .sale-banner{
-    background:linear-gradient(120deg,var(--blush-deep),var(--blush));
-    padding:70px 0;
+    background:linear-gradient(135deg,var(--rose-dark) 0%, var(--rose) 55%, var(--blush-deep) 100%);
+    padding:90px 0;
+    position:relative;
+    overflow:hidden;
+    text-align:center;
+  }
+  .sale-banner::before,
+  .sale-banner::after{
+    content:'';
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+    pointer-events:none;
+  }
+  .sale-banner::before{
+    width:300px;height:300px;
+    top:-140px;left:-100px;
+  }
+  .sale-banner::after{
+    width:240px;height:240px;
+    bottom:-120px;right:-80px;
+  }
+  .sale-banner .cta-inner{
+    position:relative;
+    z-index:1;
+    max-width:680px;
+    margin:0 auto;
+  }
+  .sale-banner .cta-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.35);
+    color:#fff;
+    padding:8px 20px;
+    border-radius:30px;
+    font-size:.72rem;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    font-weight:600;
+    margin-bottom:22px;
+    backdrop-filter:blur(4px);
   }
   .sale-banner h6.tag{
     color:var(--rose-dark);
@@ -256,19 +334,77 @@
     font-weight:600;
   }
   .sale-banner h2{
-    font-size:2.6rem;
+    font-size:2.9rem;
     font-weight:700;
     line-height:1.2;
+    color:#fff;
+    margin-bottom:18px;
   }
-  .sale-banner p{
-    color:#5c4c48;
-    max-width:400px;
-    font-size:.92rem;
+  .sale-banner p.cta-sub{
+    color:rgba(255,255,255,.92);
+    max-width:480px;
+    margin:0 auto 34px;
+    font-size:1rem;
   }
-  .sale-img img{
-    max-height:340px;
-    object-fit:contain;
-    filter:drop-shadow(0 20px 20px rgba(0,0,0,.12));
+  .sale-banner .cta-btn-group{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .sale-banner .btn-rose-solid{
+    background:#fff;
+    color:var(--rose-dark);
+    border-radius:30px;
+    padding:14px 34px;
+    font-size:.95rem;
+    font-weight:600;
+    border:none;
+    box-shadow:0 15px 30px rgba(0,0,0,.18);
+    transition:.25s;
+  }
+  .sale-banner .btn-rose-solid:hover{
+    background:var(--ink);
+    color:#fff;
+    transform:translateY(-3px);
+  }
+  .sale-banner .btn-outline-rose{
+    color:#fff;
+    border:1.5px solid rgba(255,255,255,.7);
+    border-radius:30px;
+    padding:13px 32px;
+    font-size:.95rem;
+    font-weight:600;
+    transition:.25s;
+  }
+  .sale-banner .btn-outline-rose:hover{
+    background:#fff;
+    color:var(--rose-dark);
+    border-color:#fff;
+    transform:translateY(-3px);
+  }
+  .sale-banner .cta-trust{
+    display:flex;
+    justify-content:center;
+    gap:32px;
+    flex-wrap:wrap;
+    margin-top:40px;
+    padding-top:30px;
+    border-top:1px solid rgba(255,255,255,.25);
+  }
+  .sale-banner .cta-trust-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#fff;
+    font-size:.85rem;
+    font-weight:500;
+  }
+  .sale-banner .cta-trust-item i{
+    font-size:1.1rem;
+    color:#fff;
+    opacity:.9;
   }
   .dots span{
     display:inline-block;
@@ -278,6 +414,12 @@
     margin-right:6px;
   }
   .dots span.active{background:var(--rose-dark);width:22px;border-radius:6px;}
+
+  @media(max-width:767px){
+    .sale-banner{padding:64px 0;}
+    .sale-banner h2{font-size:2.1rem;}
+    .sale-banner .cta-trust{gap:20px;}
+  }
 
   /* Category cards */
   .cat-card{
@@ -331,6 +473,7 @@
     align-items:center;
     justify-content:center;
     font-size:24px;
+    flex-shrink:0;
 }
 
 .footer-contact h6{
@@ -348,12 +491,26 @@
 /*    border-color:rgba(255,255,255,.15);*/
     margin:35px 0;
     border-color:#fff;
+    opacity:.35;
 }
 
 .footer-section h4{
     font-size:24px;
     margin-bottom:25px;
     font-weight:700;
+    position:relative;
+    padding-left:16px;
+}
+
+.footer-section h4::before{
+    content:'';
+    position:absolute;
+    left:0;
+    top:4px;
+    bottom:4px;
+    width:4px;
+    border-radius:3px;
+    background:#fff;
 }
 
 .footer-text{
@@ -375,11 +532,24 @@
     color:#fff;
     text-decoration:none;
     transition:.3s;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+}
+
+.footer-section ul li a::before{
+    content:'';
+    width:6px;height:6px;
+    border-radius:50%;
+    background:#fff;
+    opacity:.7;
+    flex-shrink:0;
 }
 
 .footer-section ul li a:hover{
-    color:#c96b6f;
-    padding-left:8px;
+    color:#fff;
+    padding-left:4px;
+    opacity:.85;
 }
 
 .footer-section p{
@@ -400,19 +570,22 @@
     width:42px;
     height:42px;
     border-radius:50%;
-    background:rgba(255,255,255,.1);
+    background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);
     display:flex;
     align-items:center;
     justify-content:center;
     color:#fff;
     transition:.3s;
     text-decoration:none;
+    flex-shrink:0;
 }
 
 .footer-social a:hover{
-    background:#c96b6f;
-    color:#2f5d2f;
-    transform:translateY(-5px);
+    background:#fff;
+    color:var(--rose-dark);
+    transform:translateY(-4px);
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
 }
 
 .copyright{
@@ -427,15 +600,15 @@
 @media(max-width:991px){
 
 .footer-section{
-    text-align:center;
+    text-align:left;
 }
 
 .footer-contact{
-    justify-content:center;
+    justify-content:flex-start;
 }
 
 .footer-social{
-    justify-content:center;
+    justify-content:flex-start;
 }
 
 }
@@ -443,23 +616,68 @@
 @media(max-width:767px){
 
 .footer-section{
-    padding:50px 0 20px;
+    padding:44px 0 18px;
+    text-align:left;
 }
 
-.footer-section h4{
-    margin-top:15px;
+.footer-top > div{
+    margin-bottom:14px;
+}
+
+.footer-top > div:last-child{
+    margin-bottom:0;
 }
 
 .footer-contact{
-    flex-direction:column;
-    text-align:center;
+    justify-content:flex-start;
+    text-align:left;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:14px;
+    padding:14px 16px;
+}
+
+.footer-icon{
+    width:48px;
+    height:48px;
+    font-size:20px;
+}
+
+.footer-section .row.gy-5 > div{
+    padding-bottom:24px;
+    margin-bottom:4px;
+    border-bottom:1px solid rgba(255,255,255,.18);
+}
+
+.footer-section .row.gy-5 > div:last-child{
+    border-bottom:none;
+    padding-bottom:0;
+}
+
+.footer-section h4{
+    font-size:19px;
+    margin-bottom:16px;
+}
+
+.footer-text{
+    font-size:14px;
+    line-height:1.75;
+}
+
+.footer-social{
+    margin-top:18px;
+}
+
+.copyright{
+    font-size:13px;
+    text-align:center !important;
 }
 
 }
+
 
   @media(max-width:991px){
     .hero h1{font-size:2.2rem;}
-    .sale-banner h2{font-size:2rem;}
     .hero-img-wrap{margin-top:30px;}
   }
 
@@ -628,7 +846,6 @@
  
   @media(max-width:991px){
     .hero h1{font-size:2.2rem;}
-    .sale-banner h2{font-size:2rem;}
     .hero-img-wrap{margin-top:30px;}
     .about-img-wrap .img-badge{display:none;}
   }
@@ -805,7 +1022,6 @@
  
   @media(max-width:991px){
     .hero h1{font-size:2.2rem;}
-    .sale-banner h2{font-size:2rem;}
     .hero-img-wrap{margin-top:30px;}
     .about-img-wrap .img-badge{display:none;}
     .ba-wrap img{height:320px;}
@@ -1034,7 +1250,7 @@
 </div>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-custom">
+<nav class="navbar navbar-expand-lg navbar-custom" id="mainNavbar">
   <div class="container">
     <a class="navbar-brand" href="#">
       <!-- <span class="brand-logo">BEAUTY<span>·</span></span>
@@ -1044,15 +1260,23 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-center nav-links" id="navMenu">
-      <a href="#" class="active">Home</a>
-      <a href="#about">About Us</a>
-      <a href="#Services">Services</a>
-      <a href="#why-us">Why Us</a>
+  <div class="collapse navbar-collapse" id="navMenu">
+    <div class="nav-links mx-auto">
+
+        <a href="#" class="">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#Services">Services</a>
+        <a href="#why-us">Why Us</a>
         <a href="#results">Transformation</a>
-          <a href="#testimonials">Testimonial</a>
-            <a href="#contact">Contact</a>
+        <a href="#testimonials">Testimonial</a>
+        <a href="#contact">Contact</a>
+
     </div>
+
+    <div class="d-lg-none mt-3">
+        <a href="#" class="btn btn-rose w-100">Book Appointment</a>
+    </div>
+</div>
     <div class="d-none d-lg-flex align-items-center">
      
       <a href="#" class="btn btn-rose ms-3">Book Appointment</a>
@@ -1169,98 +1393,22 @@
   </div>
 </section>
 
-<!-- Featured products -->
-<!-- <section id="Services" class="py-5 my-4">
-  <div class="container">
-    <div class="text-center mb-5">
-      <div class="section-eyebrow">Services</div>
-      <h2 class="section-title">Enhance Your Natural Beauty</h2>
-    </div>
-    <div class="row g-4">
-
-      <div class="col-6 col-md-4 col-lg">
-        <div class="product-card h-100">
-          <div class="product-img-box">
-            
-            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=400&q=80" alt="Lipstick set">
-          </div>
-          <div class="product-info">
-            <h6>Facial</h6>
-           
-          </div>
-        </div>
-      </div>
-
-      <div class="col-6 col-md-4 col-lg">
-        <div class="product-card h-100">
-          <div class="product-img-box">
-            
-            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=400&q=80" alt="Foundation">
-          </div>
-          <div class="product-info">
-            <h6>Hair Styling</h6>
-           
-          </div>
-        </div>
-      </div>
-
-      <div class="col-6 col-md-4 col-lg">
-        <div class="product-card h-100">
-          <div class="product-img-box">
-           
-            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=400&q=80" alt="Serum bottles">
-          </div>
-          <div class="product-info">
-            <h6>Skin Care</h6>
-            
-          </div>
-        </div>
-      </div>
-
-      <div class="col-6 col-md-4 col-lg">
-        <div class="product-card h-100">
-          <div class="product-img-box">
-           
-            <img src="https://images.unsplash.com/photo-1583241800698-e8ab01bce9ba?auto=format&fit=crop&w=400&q=80" alt="Compact powder">
-          </div>
-          <div class="product-info">
-            <h6>Hair Spa</h6>
-          
-          </div>
-        </div>
-      </div>
-
-      <div class="col-6 col-md-4 col-lg">
-        <div class="product-card h-100">
-          <div class="product-img-box">
-          
-            <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=400&q=80" alt="Model glowing skin">
-          </div>
-          <div class="product-info">
-            <h6>Eyebrow</h6>
-           
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section> -->
-
-<!-- Sale banner -->
+<!-- CTA / Sale banner -->
 <section id="sale" class="sale-banner">
   <div class="container">
-    <div class="row align-items-center g-5">
-      <div class="col-lg-6">
-       
-        <h2>Ready To unlock Your <br>Ultimate Elegance?</h2>
-       
-        <div class="d-flex gap-3 flex-wrap mt-4">
-          <a href="#" class="btn btn-rose px-4 py-2">Shop the Sale</a>
-          <a href="#" class="btn btn-outline-rose px-4 py-2">View All Offers</a>
-        </div>
+    <div class="cta-inner">
+      <!-- <span class="cta-badge"><i class="fa-solid fa-sparkles"></i> Book Your Glow-Up</span> -->
+      <h2>Ready to unlock your<br>ultimate elegance?</h2>
+      <p class="cta-sub">Book a personalised beauty session with our experts and step out with skin, hair and confidence that truly shines.</p>
+      <div class="cta-btn-group">
+        <!-- <a href="#contact" class="btn btn-rose-solid"><i class="fa-solid fa-calendar-check me-2"></i>Book Appointment</a> -->
+        <a href="#contact" class="btn btn-outline-rose">Contact Us</a>
       </div>
-   
+      <div class="cta-trust">
+        <div class="cta-trust-item"><i class="fa-solid fa-shield-heart"></i> Certified Experts</div>
+        <div class="cta-trust-item"><i class="fa-solid fa-spa"></i> Premium Products</div>
+        <div class="cta-trust-item"><i class="fa-solid fa-star"></i> 4.9 Rated Salon</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1340,7 +1488,7 @@
     <div class="row justify-content-center">
       <div class="col-md-4 mt-3">
 
-        <div class="ba-wrap" id="baWrap">
+        <div class="ba-wrap " id="baWrap" >
           <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=700&q=80" alt="After using BEAUTY skincare">
 
           <div class="ba-before" id="baBefore">
@@ -1608,7 +1756,6 @@
       </div>
     </div>
   </div>
-  </div>
 </section>
 
 <!-- Footer -->
@@ -1655,15 +1802,6 @@
                     </div>
                 </div>
             </div>
-
-         <!--    <div class="col-lg-3 col-md-6 text-lg-end text-center">
-                <div class="footer-social">
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                </div>
-            </div> -->
 
         </div>
 
@@ -1756,15 +1894,6 @@
 </a>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  // simple dot toggler for the sale banner (decorative slider indicator)
-  const dots = document.querySelectorAll('.dots span');
-  let dotIndex = 0;
-  setInterval(() => {
-    dots.forEach(d => d.classList.remove('active'));
-    dotIndex = (dotIndex + 1) % dots.length;
-    dots[dotIndex].classList.add('active');
-  }, 2500);
-
   // Preloader
   window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
@@ -1773,6 +1902,18 @@
       setTimeout(() => preloader.remove(), 600);
     }, 400);
   });
+
+  // Sticky navbar that shrinks height dynamically on scroll
+  const mainNavbar = document.getElementById('mainNavbar');
+  function handleNavbarScroll(){
+    if(window.scrollY > 60){
+      mainNavbar.classList.add('scrolled');
+    } else {
+      mainNavbar.classList.remove('scrolled');
+    }
+  }
+  window.addEventListener('scroll', handleNavbarScroll);
+  handleNavbarScroll();
  
   document.querySelectorAll('.ba-wrap').forEach(function(wrapper){
 
@@ -1840,6 +1981,36 @@
     }, { threshold: 0.5 });
     counters.forEach(c => counterObserver.observe(c));
   }
+  const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.offsetHeight;
+
+        if (window.pageYOffset >= sectionTop &&
+            window.pageYOffset < sectionTop + sectionHeight) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" && window.pageYOffset < 100) {
+            link.classList.add("active");
+        }
+
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
+
+});
 </script>
 </body>
 </html>
