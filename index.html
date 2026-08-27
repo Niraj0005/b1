@@ -1,1 +1,3973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Kalash Beauty Parlour | Premium Beauty & Salon Services in Nashik</title>
+
+<meta name="description" content="Kalash Beauty Parlour offers premium beauty treatments, skincare, bridal makeup, hair styling and salon services in Konark Nagar 2, Nashik.">
+<meta name="keywords" content="Kalash Beauty Parlour, beauty parlour Nashik, salon Nashik, bridal makeup Nashik, facial, hair styling, skincare">
+<meta name="author" content="Kalash Beauty Parlour">
+
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Tabler Icons ONLY -->
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+
+<style>
+
+:root{
+  --blush:#f6dfe0;
+  --blush-deep:#e8b4b8;
+  --rose:#dd8f92;
+  --rose-dark:#c96b6f;
+  --ink:#2b2320;
+  --cream:#fffaf8;
+  --muted:#8a7a76;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  overflow-x:hidden;
+}
+
+h1,h2,h3,.display-font{
+  font-family:'Playfair Display',serif;
+}
+
+a{
+  text-decoration:none;
+}
+
+::selection{
+  background:var(--rose-dark);
+  color:#fff;
+}
+
+/* ==============================
+   REVEAL ANIMATION
+================================= */
+
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:
+    opacity .7s cubic-bezier(.2,.7,.3,1),
+    transform .7s cubic-bezier(.2,.7,.3,1);
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.reveal-row .reveal:nth-child(1){
+  transition-delay:.05s;
+}
+
+.reveal-row .reveal:nth-child(2){
+  transition-delay:.15s;
+}
+
+.reveal-row .reveal:nth-child(3){
+  transition-delay:.25s;
+}
+
+.reveal-row .reveal:nth-child(4){
+  transition-delay:.35s;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(24px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes floaty{
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-14px);
+  }
+}
+
+@keyframes spin{
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes wa-pulse{
+  0%{
+    transform:scale(1);
+    opacity:.55;
+  }
+
+  100%{
+    transform:scale(1.9);
+    opacity:0;
+  }
+}
+
+.fade-up-1{
+  animation:fadeUp .8s ease both;
+  animation-delay:.05s;
+}
+
+.fade-up-2{
+  animation:fadeUp .8s ease both;
+  animation-delay:.2s;
+}
+
+.float-anim{
+  animation:floaty 4.5s ease-in-out infinite;
+}
+
+/* ==============================
+   SECTION TITLE
+================================= */
+
+.section-title-underline{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  margin:10px 0 6px;
+}
+
+.section-title-underline span{
+  display:inline-block;
+  height:3px;
+  border-radius:4px;
+  background:linear-gradient(
+    90deg,
+    var(--blush-deep),
+    var(--rose-dark)
+  );
+}
+
+.section-title-underline .bar-long{
+  width:46px;
+}
+
+.section-title-underline .bar-dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--rose-dark);
+}
+
+/* ==============================
+   TOP BAR
+================================= */
+
+.topbar{
+  background:linear-gradient(
+    90deg,
+    var(--rose),
+    var(--blush-deep)
+  );
+  color:#fff;
+  font-size:.8rem;
+  padding:8px 0;
+  letter-spacing:.03em;
+}
+
+.topbar a{
+  color:#fff;
+  opacity:.9;
+}
+
+.topbar a:hover{
+  opacity:1;
+}
+
+.topbar-social{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:8px;
+}
+
+.topbar-social a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:38px;
+  height:38px;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:50%;
+  color:#fff;
+  font-size:18px;
+  transition:.35s ease;
+}
+
+.topbar-social a:hover{
+  background:#fff;
+  color:var(--rose-dark);
+  transform:translateY(-4px);
+  box-shadow:0 8px 20px rgba(0,0,0,.18);
+}
+
+/* ==============================
+   NAVBAR
+================================= */
+
+.navbar-custom{
+  background:#fff;
+  padding:18px 0;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  transition:
+    padding .3s ease,
+    box-shadow .3s ease;
+  box-shadow:0 2px 10px rgba(43,35,32,.05);
+}
+
+.navbar-custom.scrolled{
+  padding:8px 0;
+  box-shadow:0 8px 24px rgba(43,35,32,.14);
+}
+
+.navbar-brand img{
+  width:50px;
+  transition:width .3s ease;
+}
+
+.navbar-custom.scrolled .navbar-brand img{
+  width:60px;
+}
+
+.brand-logo{
+  font-family:'Playfair Display',serif;
+  font-weight:700;
+  font-size:1.9rem;
+  letter-spacing:.02em;
+  color:var(--ink);
+}
+
+.brand-logo span{
+  color:var(--rose);
+}
+
+.brand-tag{
+  font-size:.62rem;
+  letter-spacing:.15em;
+  color:var(--muted);
+  text-transform:uppercase;
+  display:block;
+  margin-top:-4px;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:1;
+}
+
+.nav-links a{
+  color:var(--ink);
+  font-weight:500;
+  font-size:.92rem;
+  margin:0 14px;
+  position:relative;
+  padding-bottom:4px;
+  transition:color .25s ease;
+}
+
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:0;
+  height:2px;
+  background:var(--rose-dark);
+  border-radius:2px;
+  transition:width .3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  color:var(--rose-dark);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+  width:100%;
+}
+
+/* Mobile navbar button */
+
+.navbar-toggler{
+  border:1px solid var(--blush-deep);
+  border-radius:8px;
+  padding:8px 10px;
+  color:var(--rose-dark);
+  box-shadow:none !important;
+}
+
+.navbar-toggler:focus{
+  box-shadow:0 0 0 .15rem rgba(201,107,111,.15) !important;
+}
+
+.navbar-toggler-icon-custom{
+  font-size:24px;
+  line-height:1;
+}
+
+/* ==============================
+   BUTTONS
+================================= */
+
+.btn-rose{
+  background:var(--rose);
+  color:#fff;
+  border-radius:30px;
+  padding:10px 26px;
+  font-size:.88rem;
+  font-weight:500;
+  border:none;
+  transition:.25s;
+}
+
+.btn-rose:hover{
+  background:var(--rose-dark);
+  color:#fff;
+  transform:translateY(-2px);
+  box-shadow:0 12px 22px rgba(201,107,111,.35);
+}
+
+.btn-outline-rose{
+  background:transparent;
+  color:var(--rose-dark);
+  border:1.5px solid var(--rose-dark);
+  border-radius:30px;
+  padding:9px 24px;
+  font-size:.88rem;
+  font-weight:500;
+  transition:.25s;
+}
+
+.btn-outline-rose:hover{
+  background:var(--rose-dark);
+  color:#fff;
+  transform:translateY(-2px);
+}
+
+/* ==============================
+   HERO
+================================= */
+
+.hero{
+  background:linear-gradient(
+    135deg,
+    var(--blush) 0%,
+    var(--blush-deep) 60%,
+    var(--rose) 100%
+  );
+
+  padding:70px 0 90px;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero::before,
+.hero::after{
+  content:'';
+  position:absolute;
+  border-radius:50%;
+  background:rgba(255,255,255,.22);
+  pointer-events:none;
+}
+
+.hero::before{
+  width:220px;
+  height:220px;
+  top:-90px;
+  right:8%;
+}
+
+.hero::after{
+  width:150px;
+  height:150px;
+  bottom:-50px;
+  left:4%;
+  background:rgba(255,255,255,.15);
+}
+
+.hero h1{
+  font-size:3.1rem;
+  font-weight:700;
+  line-height:1.15;
+  color:#2b2320;
+  position:relative;
+  z-index:1;
+}
+
+.hero-sub{
+  color:#5c4c48;
+  max-width:430px;
+  margin:18px 0 28px;
+  font-size:.95rem;
+  position:relative;
+  z-index:1;
+}
+
+.hero-img-wrap{
+  position:relative;
+  z-index:1;
+}
+
+.hero-img-wrap img{
+  max-height:430px;
+  object-fit:contain;
+  filter:drop-shadow(
+    0 25px 25px rgba(0,0,0,.15)
+  );
+}
+
+/* ==============================
+   SECTION
+================================= */
+
+.section-eyebrow{
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  font-size:.72rem;
+  color:var(--rose-dark);
+  font-weight:600;
+}
+
+.section-title{
+  font-size:2.1rem;
+  font-weight:600;
+}
+
+/* ==============================
+   ABOUT
+================================= */
+
+.about-img-wrap{
+  position:relative;
+}
+
+.about-img-wrap img{
+  border-radius:20px;
+  object-fit:cover;
+  width:100%;
+}
+
+.about-img-wrap .img-main{
+  height:400px;
+  box-shadow:0 20px 40px rgba(43,35,32,.12);
+}
+
+.about-img-wrap .img-badge{
+  position:absolute;
+  bottom:-30px;
+  right:-20px;
+  width:170px;
+  height:170px;
+  border:6px solid var(--cream);
+  box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+
+.about-stat{
+  background:#fff;
+  border-radius:16px;
+  padding:20px 18px;
+  box-shadow:0 10px 25px rgba(221,143,146,.12);
+  transition:.3s;
+}
+
+.about-stat:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 30px rgba(221,143,146,.2);
+}
+
+.about-stat h3{
+  font-size:1.9rem;
+  font-weight:700;
+  color:var(--rose-dark);
+  margin-bottom:2px;
+}
+
+.about-stat span{
+  font-size:.8rem;
+  color:var(--muted);
+}
+
+.about-check li{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  margin-bottom:12px;
+  font-size:.92rem;
+  color:#5c4c48;
+}
+
+.about-check i{
+  color:var(--rose-dark);
+  margin-top:3px;
+}
+
+/* ==============================
+   SERVICES
+================================= */
+
+.cat-card{
+  position:relative;
+  border-radius:16px;
+  overflow:hidden;
+  height:340px;
+  box-shadow:0 12px 26px rgba(43,35,32,.08);
+}
+
+.cat-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.5s;
+}
+
+.cat-card:hover img{
+  transform:scale(1.08);
+}
+
+.cat-overlay{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  background:linear-gradient(
+    0deg,
+    rgba(0,0,0,.6),
+    transparent 65%
+  );
+  padding:22px;
+  color:#fff;
+}
+
+.cat-overlay h5{
+  font-weight:600;
+  margin-bottom:4px;
+}
+
+.cat-overlay p{
+  font-size:.82rem;
+  opacity:.9;
+  margin-bottom:0;
+}
+
+/* ==============================
+   CTA
+================================= */
+
+.sale-banner{
+  background:linear-gradient(
+    135deg,
+    var(--rose-dark) 0%,
+    var(--rose) 55%,
+    var(--blush-deep) 100%
+  );
+
+  padding:90px 0;
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+}
+
+.sale-banner::before,
+.sale-banner::after{
+  content:'';
+  position:absolute;
+  border-radius:50%;
+  background:rgba(255,255,255,.08);
+  pointer-events:none;
+}
+
+.sale-banner::before{
+  width:300px;
+  height:300px;
+  top:-140px;
+  left:-100px;
+}
+
+.sale-banner::after{
+  width:240px;
+  height:240px;
+  bottom:-120px;
+  right:-80px;
+}
+
+.sale-banner .cta-inner{
+  position:relative;
+  z-index:1;
+  max-width:680px;
+  margin:0 auto;
+}
+
+.sale-banner h2{
+  font-size:2.9rem;
+  font-weight:700;
+  line-height:1.2;
+  color:#fff;
+  margin-bottom:18px;
+}
+
+.sale-banner p.cta-sub{
+  color:rgba(255,255,255,.92);
+  max-width:480px;
+  margin:0 auto 34px;
+  font-size:1rem;
+}
+
+.sale-banner .cta-btn-group{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.sale-banner .btn-outline-rose{
+  color:#fff;
+  border:1.5px solid rgba(255,255,255,.7);
+  padding:13px 32px;
+  font-size:.95rem;
+  font-weight:600;
+}
+
+.sale-banner .btn-outline-rose:hover{
+  background:#fff;
+  color:var(--rose-dark);
+  border-color:#fff;
+  transform:translateY(-3px);
+}
+
+.cta-trust{
+  display:flex;
+  justify-content:center;
+  gap:32px;
+  flex-wrap:wrap;
+  margin-top:40px;
+  padding-top:30px;
+  border-top:1px solid rgba(255,255,255,.25);
+}
+
+.cta-trust-item{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#fff;
+  font-size:.85rem;
+  font-weight:500;
+}
+
+.cta-trust-item i{
+  font-size:1.1rem;
+  color:#fff;
+}
+
+/* ==============================
+   WHY US
+================================= */
+
+.why-us{
+  background:linear-gradient(
+    180deg,
+    #fff,
+    var(--blush) 120%
+  );
+}
+
+.why-card{
+  background:#fff;
+  border-radius:18px;
+  padding:34px 26px;
+  height:100%;
+  text-align:center;
+  border:1px solid #f1e4e2;
+  transition:.35s;
+}
+
+.why-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 34px rgba(221,143,146,.2);
+  border-color:transparent;
+}
+
+.why-icon{
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  background:var(--blush);
+  color:var(--rose-dark);
+  font-size:1.5rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 18px;
+  transition:.35s;
+}
+
+.why-card:hover .why-icon{
+  background:var(--rose-dark);
+  color:#fff;
+  transform:rotate(8deg) scale(1.08);
+}
+
+.why-card h5{
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+.why-card p{
+  font-size:.85rem;
+  color:var(--muted);
+  margin-bottom:0;
+}
+
+/* ==============================
+   PRELOADER
+================================= */
+
+#preloader{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:var(--cream);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  transition:
+    opacity .5s ease,
+    visibility .5s ease;
+}
+
+#preloader.loaded{
+  opacity:0;
+  visibility:hidden;
+}
+
+.preloader-logo{
+  font-family:'Playfair Display',serif;
+  font-weight:700;
+  font-size:2rem;
+  color:var(--ink);
+  letter-spacing:.03em;
+  margin-bottom:18px;
+}
+
+.preloader-logo span{
+  color:var(--rose-dark);
+}
+
+.preloader-ring{
+  width:46px;
+  height:46px;
+  border:3px solid var(--blush);
+  border-top-color:var(--rose-dark);
+  border-radius:50%;
+  animation:spin .9s linear infinite;
+}
+
+/* ==============================
+   BEFORE AFTER
+================================= */
+
+.ba-wrap{
+  position:relative;
+  width:100%;
+  max-width:640px;
+  margin:0 auto;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(221,143,146,.22);
+  user-select:none;
+}
+
+.ba-wrap .ba-after-img{
+  display:block;
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  pointer-events:none;
+}
+
+.ba-before{
+  position:absolute;
+  top:0;
+  left:0;
+  height:100%;
+  overflow:hidden;
+  width:50%;
+}
+
+.ba-before img{
+  display:block;
+  height:420px;
+  width:100%;
+  max-width:none;
+  object-fit:cover;
+  object-position:left center;
+}
+
+.ba-label{
+  position:absolute;
+  top:16px;
+  background:rgba(43,35,32,.65);
+  color:#fff;
+  font-size:.72rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  padding:5px 12px;
+  border-radius:20px;
+  z-index:6;
+}
+
+.ba-label.after{
+  right:16px;
+}
+
+.ba-label.before{
+  left:16px;
+}
+
+.ba-line{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:50%;
+  width:3px;
+  background:#fff;
+  transform:translateX(-50%);
+  pointer-events:none;
+  z-index:5;
+}
+
+.ba-handle{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:42px;
+  height:42px;
+  background:#fff;
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--rose-dark);
+  font-size:.85rem;
+  box-shadow:0 6px 14px rgba(0,0,0,.2);
+  pointer-events:none;
+  z-index:6;
+}
+
+.ba-slider{
+  position:absolute;
+  inset:0;
+  z-index:7;
+}
+
+.ba-slider input[type="range"]{
+  -webkit-appearance:none;
+  appearance:none;
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  margin:0;
+  background:transparent;
+  cursor:ew-resize;
+}
+
+.ba-slider input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none;
+  appearance:none;
+  width:42px;
+  height:42px;
+  background:transparent;
+  border:none;
+}
+
+.ba-slider input[type="range"]::-moz-range-thumb{
+  width:42px;
+  height:42px;
+  background:transparent;
+  border:none;
+}
+
+/* ==============================
+   COUNTER
+================================= */
+
+.counter-section{
+  background:linear-gradient(
+    120deg,
+    var(--rose-dark),
+    var(--rose) 55%,
+    var(--blush-deep)
+  );
+
+  padding:60px 0;
+  position:relative;
+  overflow:hidden;
+}
+
+.counter-section::before,
+.counter-section::after{
+  content:'';
+  position:absolute;
+  border-radius:50%;
+  background:rgba(255,255,255,.08);
+}
+
+.counter-section::before{
+  width:280px;
+  height:280px;
+  top:-120px;
+  left:-80px;
+}
+
+.counter-section::after{
+  width:220px;
+  height:220px;
+  bottom:-100px;
+  right:-60px;
+}
+
+.counter-item{
+  text-align:center;
+  color:#fff;
+  position:relative;
+  z-index:1;
+}
+
+.counter-icon{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:rgba(255,255,255,.18);
+  backdrop-filter:blur(4px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.4rem;
+  margin:0 auto 16px;
+  border:1px solid rgba(255,255,255,.3);
+  transition:.3s;
+}
+
+.counter-item:hover .counter-icon{
+  transform:scale(1.1);
+  background:rgba(255,255,255,.28);
+}
+
+.counter-number{
+  font-family:'Playfair Display',serif;
+  font-weight:700;
+  font-size:2.6rem;
+  line-height:1;
+  display:flex;
+  align-items:baseline;
+  justify-content:center;
+  gap:2px;
+}
+
+.counter-number .suffix{
+  font-size:1.6rem;
+}
+
+.counter-label{
+  font-size:.85rem;
+  letter-spacing:.05em;
+  opacity:.9;
+  margin-top:8px;
+  text-transform:uppercase;
+}
+
+.counter-divider{
+  width:1px;
+  background:rgba(255,255,255,.25);
+  height:70px;
+  margin:0 auto;
+}
+
+/* ==============================
+   TESTIMONIAL
+================================= */
+
+.testimonial-card{
+  background:#fff;
+  border-radius:18px;
+  padding:32px 28px;
+  height:100%;
+  border:1px solid #f1e4e2;
+  position:relative;
+  transition:.3s;
+}
+
+.testimonial-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 32px rgba(221,143,146,.18);
+}
+
+.quote-mark{
+  font-size:2.2rem;
+  color:var(--blush-deep);
+  font-family:'Playfair Display',serif;
+  line-height:1;
+}
+
+.testimonial-stars i{
+  color:#e8a33d;
+  font-size:.8rem;
+}
+
+.testimonial-card p.review{
+  font-size:.92rem;
+  color:#5c4c48;
+  margin:14px 0 20px;
+}
+
+.testimonial-person{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-top:16px;
+}
+
+.testimonial-person img{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.testimonial-person h6{
+  margin-bottom:0;
+  font-weight:600;
+  font-size:.9rem;
+}
+
+.testimonial-person span{
+  font-size:.76rem;
+  color:var(--muted);
+}
+
+/* ==============================
+   CONTACT
+================================= */
+
+.contact-section{
+  background:linear-gradient(
+    180deg,
+    var(--cream),
+    var(--blush) 140%
+  );
+}
+
+.contact-card{
+  background:#fff;
+  border-radius:20px;
+  padding:36px;
+  box-shadow:0 15px 35px rgba(221,143,146,.15);
+}
+
+.contact-info-item{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  margin-bottom:22px;
+}
+
+.contact-info-item .icon{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:var(--blush);
+  color:var(--rose-dark);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  transition:.3s;
+}
+
+.contact-info-item:hover .icon{
+  background:var(--rose-dark);
+  color:#fff;
+}
+
+.contact-info-item h6{
+  font-weight:600;
+  margin-bottom:2px;
+}
+
+.contact-info-item span{
+  font-size:.85rem;
+  color:var(--muted);
+}
+
+.form-control-custom{
+  border:1.5px solid #f1e4e2;
+  border-radius:12px;
+  padding:12px 16px;
+  font-size:.9rem;
+  background:var(--cream);
+}
+
+.form-control-custom:focus{
+  border-color:var(--rose-dark);
+  box-shadow:0 0 0 .15rem rgba(201,107,111,.15);
+  background:#fff;
+}
+
+.form-status{
+  font-size:.85rem;
+  margin-top:12px;
+}
+
+/* ==============================
+   MAP
+================================= */
+
+.map-wrap{
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 15px 35px rgba(221,143,146,.2);
+  border:6px solid #fff;
+}
+
+.map-wrap iframe{
+  width:100%;
+  height:380px;
+  border:0;
+  display:block;
+  filter:saturate(1.05) contrast(1.02);
+}
+
+.map-badge{
+  position:absolute;
+  top:20px;
+  left:20px;
+  background:#fff;
+  padding:12px 20px;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+  display:flex;
+  align-items:center;
+  gap:12px;
+  z-index:2;
+}
+
+.map-badge .icon{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:var(--blush);
+  color:var(--rose-dark);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+
+.map-badge h6{
+  margin-bottom:0;
+  font-weight:600;
+  font-size:.85rem;
+}
+
+.map-badge span{
+  font-size:.75rem;
+  color:var(--muted);
+}
+
+/* ==============================
+   FOOTER
+================================= */
+
+.footer-section{
+  background:linear-gradient(
+    120deg,
+    var(--blush-deep),
+    var(--blush)
+  );
+
+  color:#fff;
+  padding:70px 0 20px;
+}
+
+.footer-top{
+  padding-bottom:30px;
+}
+
+.footer-contact{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.footer-icon{
+  width:60px;
+  height:60px;
+  background:#fff;
+  color:#c96b6f;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  flex-shrink:0;
+  transition:.3s;
+}
+
+.footer-contact:hover .footer-icon{
+  transform:scale(1.08);
+}
+
+.footer-contact h6{
+  font-weight:700;
+  margin-bottom:5px;
+}
+
+.footer-contact p{
+  margin:0;
+  color:#fff;
+  font-size:15px;
+}
+
+.footer-section hr{
+  margin:35px 0;
+  border-color:#fff;
+  opacity:.35;
+}
+
+.footer-section h4{
+  font-size:24px;
+  margin-bottom:25px;
+  font-weight:700;
+  position:relative;
+  padding-left:16px;
+}
+
+.footer-section h4::before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:4px;
+  bottom:4px;
+  width:4px;
+  border-radius:3px;
+  background:#fff;
+}
+
+.footer-text{
+  color:#fff;
+  line-height:1.9;
+}
+
+.footer-section ul{
+  padding:0;
+  margin:0;
+  list-style:none;
+}
+
+.footer-section ul li{
+  margin-bottom:14px;
+}
+
+.footer-section ul li a{
+  color:#fff;
+  transition:.3s;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+
+.footer-section ul li a::before{
+  content:'';
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#fff;
+  opacity:.7;
+  flex-shrink:0;
+}
+
+.footer-section ul li a:hover{
+  color:#fff;
+  padding-left:4px;
+  opacity:.85;
+}
+
+.footer-section p{
+  color:#fff;
+}
+
+.footer-section p i{
+  color:#fff;
+  margin-right:10px;
+}
+
+.footer-social{
+  display:flex;
+  gap:12px;
+}
+
+.footer-social a{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.3);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  transition:.3s;
+  flex-shrink:0;
+}
+
+.footer-social a:hover{
+  background:#fff;
+  color:var(--rose-dark);
+  transform:translateY(-4px);
+  box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+.copyright{
+  color:#fff;
+  font-size:15px;
+}
+
+/* ==============================
+   WHATSAPP
+================================= */
+
+.whatsapp-float{
+  position:fixed;
+  bottom:26px;
+  right:26px;
+  z-index:999;
+  width:60px;
+  height:60px;
+  background:#25D366;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:1.8rem;
+  box-shadow:0 10px 25px rgba(37,211,102,.45);
+  transition:.3s ease;
+}
+
+.whatsapp-float:hover{
+  color:#fff;
+  transform:translateY(-4px) scale(1.06);
+  box-shadow:0 14px 30px rgba(37,211,102,.55);
+}
+
+.whatsapp-float::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  background:#25D366;
+  animation:wa-pulse 2.2s infinite;
+  z-index:-1;
+}
+
+.whatsapp-tooltip{
+  position:absolute;
+  right:72px;
+  top:50%;
+  transform:translateY(-50%);
+  background:#fff;
+  color:var(--ink);
+  padding:8px 16px;
+  border-radius:10px;
+  font-size:.82rem;
+  font-weight:500;
+  white-space:nowrap;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+  opacity:0;
+  visibility:hidden;
+  transition:.25s ease;
+}
+
+.whatsapp-tooltip::after{
+  content:'';
+  position:absolute;
+  left:100%;
+  top:50%;
+  transform:translateY(-50%);
+  border:6px solid transparent;
+  border-left-color:#fff;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip{
+  opacity:1;
+  visibility:visible;
+  right:78px;
+}
+
+/* ==============================
+   MOBILE
+================================= */
+
+@media(max-width:991px){
+
+  #navMenu{
+    margin-top:16px;
+    border-top:1px solid #f1e4e2;
+    padding-top:15px;
+    max-height:calc(100vh - 90px);
+    overflow-y:auto;
+  }
+
+  .nav-links{
+    display:flex;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    width:100%;
+  }
+
+  .nav-links a{
+    display:block;
+    width:100%;
+    margin:0;
+    padding:12px 15px;
+    text-align:left;
+    border-bottom:1px solid #f6ebe9;
+  }
+
+  .nav-links a:last-child{
+    border-bottom:none;
+  }
+
+  .nav-links a::after{
+    display:none;
+  }
+
+  .nav-links a.active{
+    background:var(--blush);
+    border-radius:8px;
+  }
+
+  .hero h1{
+    font-size:2.2rem;
+  }
+
+  .hero-img-wrap{
+    margin-top:30px;
+  }
+
+  .about-img-wrap .img-badge{
+    display:none;
+  }
+
+  .footer-section{
+    text-align:left;
+  }
+
+  .footer-contact{
+    justify-content:flex-start;
+  }
+
+  .footer-social{
+    justify-content:flex-start;
+  }
+
+  .counter-divider{
+    display:none;
+  }
+}
+
+@media(max-width:767px){
+
+  .sale-banner{
+    padding:64px 0;
+  }
+
+  .sale-banner h2{
+    font-size:2.1rem;
+  }
+
+  .cta-trust{
+    gap:20px;
+  }
+
+  .ba-wrap .ba-after-img{
+    height:320px;
+  }
+
+  .ba-before img{
+    height:320px;
+  }
+
+  .counter-item{
+    margin-bottom:20px;
+  }
+
+  .footer-section{
+    padding:44px 0 18px;
+    text-align:left;
+  }
+
+  .footer-top > div{
+    margin-bottom:14px;
+  }
+
+  .footer-top > div:last-child{
+    margin-bottom:0;
+  }
+
+  .footer-contact{
+    justify-content:flex-start;
+    text-align:left;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:14px;
+    padding:14px 16px;
+  }
+
+  .footer-icon{
+    width:48px;
+    height:48px;
+    font-size:20px;
+  }
+
+  .footer-section .row.gy-5 > div{
+    padding-bottom:24px;
+    margin-bottom:4px;
+    border-bottom:1px solid rgba(255,255,255,.18);
+  }
+
+  .footer-section .row.gy-5 > div:last-child{
+    border-bottom:none;
+    padding-bottom:0;
+  }
+
+  .footer-section h4{
+    font-size:19px;
+    margin-bottom:16px;
+  }
+
+  .footer-text{
+    font-size:14px;
+    line-height:1.75;
+  }
+
+  .footer-social{
+    margin-top:18px;
+  }
+
+  .copyright{
+    font-size:13px;
+    text-align:center !important;
+  }
+
+  .whatsapp-float{
+    width:52px;
+    height:52px;
+    font-size:1.5rem;
+    bottom:18px;
+    right:18px;
+  }
+
+  .whatsapp-tooltip{
+    display:none;
+  }
+}
+
+@media(max-width:576px){
+
+  section.py-5{
+    padding-top:2.6rem !important;
+    padding-bottom:2.6rem !important;
+  }
+
+  .section-title{
+    font-size:1.6rem;
+  }
+
+  .hero{
+    padding:50px 0 60px;
+  }
+
+  .hero h1{
+    font-size:1.9rem;
+  }
+
+  .why-card{
+    padding:26px 18px;
+  }
+
+  .testimonial-card{
+    padding:24px 20px;
+  }
+
+  .contact-card{
+    padding:22px;
+  }
+
+  .counter-number{
+    font-size:2rem;
+  }
+
+  .counter-number .suffix{
+    font-size:1.2rem;
+  }
+
+  .map-badge{
+    top:10px;
+    left:10px;
+    padding:8px 12px;
+  }
+
+  .map-badge .icon{
+    width:36px;
+    height:36px;
+  }
+
+  .map-badge h6{
+    font-size:.75rem;
+  }
+
+  .map-badge span{
+    font-size:.65rem;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ==============================
+     PRELOADER
+================================= -->
+
+<div id="preloader">
+
+  <div class="preloader-logo">
+    Kalash Beauty Parlour<span>·</span>
+  </div>
+
+  <div class="preloader-ring"></div>
+
+</div>
+
+
+<!-- ==============================
+     TOP BAR
+================================= -->
+
+<div class="topbar d-none d-md-block">
+
+  <div class="container">
+
+    <div class="row align-items-center">
+
+      <div class="col-lg-4 text-center text-lg-start">
+
+        <i class="ti ti-map-pin me-2"></i>
+
+        Banglow No. 2, Konark Nagar 2 Nashik
+
+      </div>
+
+      <div class="col-lg-4 text-center">
+
+        <a href="tel:+919876543210">
+
+          <i class="ti ti-phone-call me-2"></i>
+
+          +91 98765 43210
+
+        </a>
+
+      </div>
+
+      <div class="col-lg-4">
+
+        <div class="topbar-social">
+
+          <a href="#" aria-label="Facebook">
+            <i class="ti ti-brand-facebook"></i>
+          </a>
+
+          <a href="#" aria-label="Instagram">
+            <i class="ti ti-brand-instagram"></i>
+          </a>
+
+          <a href="#" aria-label="WhatsApp">
+            <i class="ti ti-brand-whatsapp"></i>
+          </a>
+
+          <a href="#" aria-label="YouTube">
+            <i class="ti ti-brand-youtube"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ==============================
+     NAVBAR
+================================= -->
+
+<nav class="navbar navbar-expand-lg navbar-custom" id="mainNavbar">
+
+  <div class="container">
+
+    <a class="navbar-brand" href="#home">
+
+      <img
+        src="assets/img/logo.png"
+        width="50"
+        alt="Kalash Beauty Parlour Logo"
+      >
+
+    </a>
+
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navMenu"
+      aria-controls="navMenu"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+
+      <i class="ti ti-menu-2 navbar-toggler-icon-custom"></i>
+
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navMenu">
+
+      <div class="nav-links mx-auto">
+
+        <a href="#home" class="active">Home</a>
+
+        <a href="#about">About Us</a>
+
+        <a href="#services">Services</a>
+
+        <a href="#why-us">Why Us</a>
+
+        <a href="#results">Transformation</a>
+
+        <a href="#testimonials">Testimonial</a>
+
+        <a href="#contact">Contact</a>
+
+      </div>
+
+
+      <div class="d-lg-none mt-3">
+
+        <a href="#contact" class="btn btn-rose w-100">
+          <i class="ti ti-calendar-event me-1"></i>
+          Book Appointment
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="d-none d-lg-flex align-items-center">
+
+      <a href="#contact" class="btn btn-rose ms-3">
+
+        <i class="ti ti-calendar-event me-1"></i>
+
+        Book Appointment
+
+      </a>
+
+    </div>
+
+  </div>
+
+</nav>
+
+
+<!-- ==============================
+     HERO
+================================= -->
+
+<section class="hero" id="home">
+
+  <div class="container">
+
+    <div class="row align-items-center mt-3">
+
+      <div class="col-lg-6 order-2 order-lg-1 text-center text-lg-start fade-up-1">
+
+        <h1>
+          Glow like<br>
+          never before!
+        </h1>
+
+        <p class="hero-sub">
+
+          Professional beauty care designed to enhance
+          your natural beauty and give you confidence
+          that truly shines.
+
+        </p>
+
+        <a href="#services" class="btn btn-rose px-4 py-2">
+
+          <i class="ti ti-sparkles me-1"></i>
+
+          View Services
+
+        </a>
+
+      </div>
+
+
+      <div class="col-lg-6 order-1 order-lg-2 hero-img-wrap text-center mb-4 mb-lg-0 fade-up-2">
+
+        <img
+          src="assets/img/slide1.png"
+          alt="Kalash Beauty Parlour beauty collection"
+          class="img-fluid rounded-4 float-anim"
+        >
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==============================
+     ABOUT
+================================= -->
+
+<section id="about" class="py-5 my-4">
+
+  <div class="container">
+
+    <div class="row align-items-center g-5">
+
+      <div class="col-lg-6 reveal">
+
+        <div class="about-img-wrap">
+
+          <img
+            class="img-main"
+            src="assets/img/habout.jpg"
+            alt="Kalash Beauty Parlour"
+          >
+
+          <img
+            class="img-badge rounded-4"
+            src="assets/img/slide3.jpg"
+            alt="Beauty treatment"
+          >
+
+        </div>
+
+      </div>
+
+
+      <div class="col-lg-6 reveal">
+
+        <div class="section-eyebrow">
+          About Us
+        </div>
+
+        <h2 class="section-title mb-3">
+          Beauty rooted in care, made for you
+        </h2>
+
+        <p class="mb-4" style="color:#5c4c48;font-size:.95rem;">
+
+          Kalash Beauty Parlour is dedicated to providing
+          premium beauty treatments, hair care, skincare,
+          bridal makeup and personalized salon services.
+          Our experienced professionals focus on quality,
+          hygiene and customer satisfaction.
+
+        </p>
+
+
+        <ul class="list-unstyled about-check">
+
+          <li>
+            <i class="ti ti-circle-check"></i>
+            Premium beauty and salon services
+          </li>
+
+          <li>
+            <i class="ti ti-circle-check"></i>
+            Experienced beauty professionals
+          </li>
+
+          <li>
+            <i class="ti ti-circle-check"></i>
+            Hygienic and comfortable environment
+          </li>
+
+        </ul>
+
+
+        <div class="row g-3 mt-2">
+
+          <div class="col-4">
+
+            <div class="about-stat text-center">
+
+              <h3>8+</h3>
+
+              <span>Years Experience</span>
+
+            </div>
+
+          </div>
+
+
+          <div class="col-4">
+
+            <div class="about-stat text-center">
+
+              <h3>50+</h3>
+
+              <span>Happy Customers</span>
+
+            </div>
+
+          </div>
+
+
+          <div class="col-4">
+
+            <div class="about-stat text-center">
+
+              <h3>100%</h3>
+
+              <span>Care</span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==============================
+     SERVICES
+================================= -->
+
+<section id="services" class="py-5 my-4">
+
+  <div class="container">
+
+    <div class="text-center mb-5 reveal">
+
+      <div class="section-eyebrow">
+        Services
+      </div>
+
+      <h2 class="section-title">
+        Enhance Your Natural Beauty
+      </h2>
+
+      <div class="section-title-underline">
+
+        <span class="bar-long"></span>
+
+        <span class="bar-dot"></span>
+
+        <span class="bar-long"></span>
+
+      </div>
+
+    </div>
+
+
+    <div class="row g-4 reveal-row">
+
+      <div class="col-md-4 reveal">
+
+        <div class="cat-card">
+
+          <img
+            src="assets/img/s1.png"
+            alt="Hair Styling Service"
+          >
+
+          <div class="cat-overlay">
+
+            <h5>
+              Hair Styling
+            </h5>
+
+            <p>
+              Strong, silky and healthy hair
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-4 reveal">
+
+        <div class="cat-card">
+
+          <img
+            src="assets/img/s2.png"
+            alt="Facial Service"
+          >
+
+          <div class="cat-overlay">
+
+            <h5>
+              Facial
+            </h5>
+
+            <p>
+              Nourish and refresh your skin
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-4 reveal">
+
+        <div class="cat-card">
+
+          <img
+            src="assets/img/s3.png"
+            alt="Skin Care Service"
+          >
+
+          <div class="cat-overlay">
+
+            <h5>
+              Skin Care
+            </h5>
+
+            <p>
+              Professional care for glowing skin
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==============================
+     CTA
+================================= -->
+
+<section id="sale" class="sale-banner">
+
+  <div class="container">
+
+    <div class="cta-inner reveal">
+
+      <h2>
+        Ready to unlock your<br>
+        ultimate elegance?
+      </h2>
+
+      <p class="cta-sub">
+
+        Book a personalized beauty session with
+        our experts and step out with skin, hair
+        and confidence that truly shines.
+
+      </p>
+
+
+      <div class="cta-btn-group">
+
+        <a href="#contact" class="btn btn-outline-rose">
+
+          <i class="ti ti-phone-call me-1"></i>
+
+          Contact Us
+
+        </a>
+
+      </div>
+
+
+      <div class="cta-trust">
+
+        <div class="cta-trust-item">
+
+          <i class="ti ti-shield-check"></i>
+
+          Certified Experts
+
+        </div>
+
+
+        <div class="cta-trust-item">
+
+          <i class="ti ti-sparkles"></i>
+
+          Premium Products
+
+        </div>
+
+
+        <div class="cta-trust-item">
+
+          <i class="ti ti-star-filled"></i>
+
+          4.9 Rated Salon
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==============================
+     WHY US
+================================= -->
+
+<section id="why-us" class="why-us py-5 my-4">
+
+  <div class="container py-4">
+
+    <div class="text-center mb-5 reveal">
+
+      <div class="section-eyebrow">
+        Why Choose Us
+      </div>
+
+      <h2 class="section-title">
+        Why Clients Love Us
+      </h2>
+
+      <div class="section-title-underline">
+
+        <span class="bar-long"></span>
+
+        <span class="bar-dot"></span>
+
+        <span class="bar-long"></span>
+
+      </div>
+
+    </div>
+
+
+    <div class="row g-4 reveal-row">
+
+      <div class="col-6 col-lg-3 reveal">
+
+        <div class="why-card">
+
+          <div class="why-icon">
+
+            <i class="ti ti-sparkles"></i>
+
+          </div>
+
+          <h5>
+            Premium Beauty Care
+          </h5>
+
+          <p>
+            Luxury beauty treatments with
+            high-quality products for beautiful results.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-6 col-lg-3 reveal">
+
+        <div class="why-card">
+
+          <div class="why-icon">
+
+            <i class="ti ti-user-heart"></i>
+
+          </div>
+
+          <h5>
+            Expert Professionals
+          </h5>
+
+          <p>
+            Experienced beauty experts dedicated
+            to enhancing your natural beauty.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-6 col-lg-3 reveal">
+
+        <div class="why-card">
+
+          <div class="why-icon">
+
+            <i class="ti ti-flower"></i>
+
+          </div>
+
+          <h5>
+            Hygienic Environment
+          </h5>
+
+          <p>
+            Clean and sanitized salon with
+            professional hygiene standards.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-6 col-lg-3 reveal">
+
+        <div class="why-card">
+
+          <div class="why-icon">
+
+            <i class="ti ti-award"></i>
+
+          </div>
+
+          <h5>
+            Trusted Service
+          </h5>
+
+          <p>
+            Exceptional customer care with
+            personalized beauty solutions.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==============================
+     BEFORE / AFTER
+================================= -->
+
+<section id="results" class="py-5 my-4">
+
+  <div class="container">
+
+    <div class="text-center mb-5 reveal">
+
+      <div class="section-eyebrow">
+        Real Results
+      </div>
+
+      <h2 class="section-title">
+        See the glow for yourself
+      </h2>
+
+      <div class="section-title-underline">
+
+        <span class="bar-long"></span>
+
+        <span class="bar-dot"></span>
+
+        <span class="bar-long"></span>
+
+      </div>
+
+    </div>
+
+
+    <div class="row justify-content-center reveal-row">
+
+
+      <!-- BEFORE AFTER 1 -->
+
+      <div class="col-md-4 mt-3 reveal">
+
+        <div class="ba-wrap">
+
+          <img
+            src="assets/img/b1.png"
+            alt="After beauty treatment"
+            class="ba-after-img"
+          >
+
+          <div class="ba-before">
+
+            <img
+              src="assets/img/a1.png"
+              alt="Before beauty treatment"
+            >
+
+          </div>
+
+          <span class="ba-label before">
+            Before
+          </span>
+
+          <span class="ba-label after">
+            After
+          </span>
+
+          <div class="ba-line"></div>
+
+          <div class="ba-handle">
+
+            <i class="ti ti-arrows-left-right"></i>
+
+          </div>
+
+          <div class="ba-slider">
+
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value="50"
+              aria-label="Before and after comparison"
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- BEFORE AFTER 2 -->
+
+      <div class="col-md-4 mt-3 reveal">
+
+        <div class="ba-wrap">
+
+          <img
+            src="assets/img/b2.png"
+            alt="After beauty treatment"
+            class="ba-after-img"
+          >
+
+          <div class="ba-before">
+
+            <img
+              src="assets/img/a2.png"
+              alt="Before beauty treatment"
+            >
+
+          </div>
+
+          <span class="ba-label before">
+            Before
+          </span>
+
+          <span class="ba-label after">
+            After
+          </span>
+
+          <div class="ba-line"></div>
+
+          <div class="ba-handle">
+
+            <i class="ti ti-arrows-left-right"></i>
+
+          </div>
+
+          <div class="ba-slider">
+
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value="50"
+              aria-label="Before and after comparison"
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- BEFORE AFTER 3 -->
+
+      <div class="col-md-4 mt-3 reveal">
+
+        <div class="ba-wrap">
+
+          <img
+            src="assets/img/b3.png"
+            alt="After beauty treatment"
+            class="ba-after-img"
+          >
+
+          <div class="ba-before">
+
+            <img
+              src="assets/img/a3.png"
+              alt="Before beauty treatment"
+            >
+
+          </div>
+
+          <span class="ba-label before">
+            Before
+          </span>
+
+          <span class="ba-label after">
+            After
+          </span>
+
+          <div class="ba-line"></div>
+
+          <div class="ba-handle">
+
+            <i class="ti ti-arrows-left-right"></i>
+
+          </div>
+
+          <div class="ba-slider">
+
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value="50"
+              aria-label="Before and after comparison"
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==============================
+     COUNTERS
+================================= -->
+
+<section class="counter-section">
+
+  <div class="container">
+
+    <div class="row align-items-center reveal-row">
+
+
+      <div class="col-6 col-md-3 reveal">
+
+        <div class="counter-item">
+
+          <div class="counter-icon">
+
+            <i class="ti ti-users"></i>
+
+          </div>
+
+          <div class="counter-number">
+
+            <span
+              class="count"
+              data-target="50"
+            >
+              0
+            </span>
+
+            <span class="suffix">
+              k+
+            </span>
+
+          </div>
+
+          <div class="counter-label">
+            Happy Customers
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-auto d-none d-md-block">
+
+        <div class="counter-divider"></div>
+
+      </div>
+
+
+      <div class="col-6 col-md-3 reveal">
+
+        <div class="counter-item">
+
+          <div class="counter-icon">
+
+            <i class="ti ti-package"></i>
+
+          </div>
+
+          <div class="counter-number">
+
+            <span
+              class="count"
+              data-target="120"
+            >
+              0
+            </span>
+
+            <span class="suffix">
+              +
+            </span>
+
+          </div>
+
+          <div class="counter-label">
+            Beauty Services
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-auto d-none d-md-block">
+
+        <div class="counter-divider"></div>
+
+      </div>
+
+
+      <div class="col-6 col-md-3 reveal">
+
+        <div class="counter-item">
+
+          <div class="counter-icon">
+
+            <i class="ti ti-award"></i>
+
+          </div>
+
+          <div class="counter-number">
+
+            <span
+              class="count"
+              data-target="8"
+            >
+              0
+            </span>
+
+            <span class="suffix">
+              +
+            </span>
+
+          </div>
+
+          <div class="counter-label">
+            Years Experience
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-auto d-none d-md-block">
+
+        <div class="counter-divider"></div>
+
+      </div>
+
+
+      <div class="col-6 col-md-2 reveal">
+
+        <div class="counter-item">
+
+          <div class="counter-icon">
+
+            <i class="ti ti-heart"></i>
+
+          </div>
+
+          <div class="counter-number">
+
+            <span
+              class="count"
+              data-target="98"
+            >
+              0
+            </span>
+
+            <span class="suffix">
+              %
+            </span>
+
+          </div>
+
+          <div class="counter-label">
+            Satisfaction
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==============================
+     TESTIMONIALS
+================================= -->
+
+<section id="testimonials" class="py-5 my-4">
+
+  <div class="container">
+
+    <div class="text-center mb-5 reveal">
+
+      <div class="section-eyebrow">
+        Testimonials
+      </div>
+
+      <h2 class="section-title">
+        Loved by our customers
+      </h2>
+
+      <div class="section-title-underline">
+
+        <span class="bar-long"></span>
+
+        <span class="bar-dot"></span>
+
+        <span class="bar-long"></span>
+
+      </div>
+
+    </div>
+
+
+    <div class="row g-4 reveal-row">
+
+
+      <div class="col-md-6 col-lg-4 reveal">
+
+        <div class="testimonial-card">
+
+          <div class="quote-mark">
+            &ldquo;
+          </div>
+
+          <div class="testimonial-stars mb-1">
+
+            <i class="ti ti-star-filled"></i>
+            <i class="ti ti-star-filled"></i>
+            <i class="ti ti-star-filled"></i>
+            <i class="ti ti-star-filled"></i>
+            <i class="ti ti-star-filled"></i>
+
+          </div>
+
+          <p class="review">
+
+            My skin has never felt this soft.
+            The facial service was amazing and
+            the staff was very professional.
+
+          </p>
+
+          <div class="testimonial-person">
+
+            <img
+              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80"
+              alt="Amelia Grant"
+              loading="lazy"
+            >
+
+            <div>
+
+              <h6>
+                Amelia Grant
+              </h6>
+
+              <span>
+                Happy Customer
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6 col-lg-4 reveal">
+
+        <div class="testimonial-card">
+
+          <div class="quote-mark">
+            &ldquo;
+          </div>
+
+          <div class="testimonial-stars mb-1">
+
+            <i class="ti ti-star-filled"></i>
+            <i class="ti ti-star-filled"></i>
+            <i class="ti ti-star-filled"></i>
+            <i class="ti ti-star-filled"></i>
+            <i class="ti ti-star-filled"></i>
+
+          </div>
+
+          <p class="review">
+
+            I loved the service and the overall
+            salon experience. Everything was clean,
+            comfortable and professionally handled.
+
+          </p>
+
+          <div class="testimonial-person">
+
+            <img
+              src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=100&q=80"
+              alt="Priya Sharma"
+              loading="lazy"
+            >
+
+            <div>
+
+              <h6>
+                Priya Sharma
+              </h6>
+
+              <span>
+                Happy Customer
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6 col-lg-4 mx-auto reveal">
+
+        <div class="testimonial-card">
+
+          <div class="quote-mark">
+            &ldquo;
+          </div>
+
+          <div class="testimonial-stars mb-1">
+
+            <i class="ti ti-star-filled"></i>
+            <i class="ti ti-star-filled"></i>
+            <i class="ti ti-star-filled"></i>
+            <i class="ti ti-star-filled"></i>
+            <i class="ti ti-star-half-filled"></i>
+
+          </div>
+
+          <p class="review">
+
+            Excellent beauty services and friendly
+            staff. I would definitely recommend
+            Kalash Beauty Parlour.
+
+          </p>
+
+          <div class="testimonial-person">
+
+            <img
+              src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?auto=format&fit=crop&w=100&q=80"
+              alt="Sofia Martinez"
+              loading="lazy"
+            >
+
+            <div>
+
+              <h6>
+                Sofia Martinez
+              </h6>
+
+              <span>
+                Happy Customer
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==============================
+     CONTACT
+================================= -->
+
+<section id="contact" class="contact-section py-5 my-4">
+
+  <div class="container py-4">
+
+    <div class="text-center mb-5 reveal">
+
+      <div class="section-eyebrow">
+        Get In Touch
+      </div>
+
+      <h2 class="section-title">
+        Contact Us
+      </h2>
+
+      <div class="section-title-underline">
+
+        <span class="bar-long"></span>
+
+        <span class="bar-dot"></span>
+
+        <span class="bar-long"></span>
+
+      </div>
+
+    </div>
+
+
+    <div class="row g-5 align-items-start">
+
+
+      <div class="col-lg-5 reveal">
+
+
+        <div class="contact-info-item">
+
+          <div class="icon">
+
+            <i class="ti ti-map-pin"></i>
+
+          </div>
+
+          <div>
+
+            <h6>
+              Address
+            </h6>
+
+            <span>
+              Banglow No.2, Konark Nagar 2,
+              Near Jatra Hotel, Nashik, Maharashtra
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="contact-info-item">
+
+          <div class="icon">
+
+            <i class="ti ti-phone"></i>
+
+          </div>
+
+          <div>
+
+            <h6>
+              Call Us
+            </h6>
+
+            <span>
+              +91 98765 43210
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="contact-info-item">
+
+          <div class="icon">
+
+            <i class="ti ti-mail"></i>
+
+          </div>
+
+          <div>
+
+            <h6>
+              Email Us
+            </h6>
+
+            <span>
+              info@kalashbeauty.com
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="contact-info-item">
+
+          <div class="icon">
+
+            <i class="ti ti-clock"></i>
+
+          </div>
+
+          <div>
+
+            <h6>
+              Store Hours
+            </h6>
+
+            <span>
+              Mon – Sat: 9 AM to 8 PM
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-lg-7 reveal">
+
+        <div class="contact-card">
+
+          <form id="contactForm" novalidate>
+
+            <div class="row g-3">
+
+
+              <div class="col-md-6">
+
+                <label
+                  class="form-label small fw-semibold"
+                  for="cfName"
+                >
+                  Full Name
+                </label>
+
+                <input
+                  type="text"
+                  class="form-control form-control-custom"
+                  id="cfName"
+                  placeholder="Your name"
+                  required
+                >
+
+              </div>
+
+
+              <div class="col-md-6">
+
+                <label
+                  class="form-label small fw-semibold"
+                  for="cfEmail"
+                >
+                  Email Address
+                </label>
+
+                <input
+                  type="email"
+                  class="form-control form-control-custom"
+                  id="cfEmail"
+                  placeholder="you@example.com"
+                  required
+                >
+
+              </div>
+
+
+              <div class="col-12">
+
+                <label
+                  class="form-label small fw-semibold"
+                  for="cfSubject"
+                >
+                  Subject
+                </label>
+
+                <input
+                  type="text"
+                  class="form-control form-control-custom"
+                  id="cfSubject"
+                  placeholder="How can we help?"
+                  required
+                >
+
+              </div>
+
+
+              <div class="col-12">
+
+                <label
+                  class="form-label small fw-semibold"
+                  for="cfMessage"
+                >
+                  Message
+                </label>
+
+                <textarea
+                  class="form-control form-control-custom"
+                  id="cfMessage"
+                  rows="4"
+                  placeholder="Write your message..."
+                  required
+                ></textarea>
+
+              </div>
+
+
+              <div class="col-12">
+
+                <button
+                  type="submit"
+                  class="btn btn-rose px-4 py-2"
+                >
+
+                  <i class="ti ti-send me-1"></i>
+
+                  Send Message
+
+                </button>
+
+                <div
+                  id="cfStatus"
+                  class="form-status"
+                ></div>
+
+              </div>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- MAP -->
+
+    <div class="row mt-5 reveal">
+
+      <div class="col-12">
+
+        <div class="map-wrap">
+
+          <div class="map-badge">
+
+            <div class="icon">
+
+              <i class="ti ti-map-pin"></i>
+
+            </div>
+
+            <div>
+
+              <h6>
+                Kalash Beauty Parlour
+              </h6>
+
+              <span>
+                Konark Nagar 2, Nashik, Maharashtra
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.6854109790106!2d73.84609177500293!3d20.021713881387434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddc18b41024765%3A0x382cb0c1532c2e1f!2sKonark%20Nagar%202%20Kaman!5e0!3m2!1sen!2sin!4v1784622874216!5m2!1sen!2sin"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+            title="Kalash Beauty Parlour location map">
+          </iframe>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==============================
+     FOOTER
+================================= -->
+
+<footer class="footer-section">
+
+  <div class="container">
+
+
+    <div class="row footer-top gy-4">
+
+
+      <div class="col-lg-4 col-md-6">
+
+        <div class="footer-contact">
+
+          <div class="footer-icon">
+
+            <i class="ti ti-phone"></i>
+
+          </div>
+
+          <div>
+
+            <h6>
+              Phone
+            </h6>
+
+            <p>
+              +91 98765 43210
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-lg-4 col-md-6">
+
+        <div class="footer-contact">
+
+          <div class="footer-icon">
+
+            <i class="ti ti-mail"></i>
+
+          </div>
+
+          <div>
+
+            <h6>
+              Email
+            </h6>
+
+            <p>
+              info@kalashbeauty.com
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-lg-4 col-md-6">
+
+        <div class="footer-contact">
+
+          <div class="footer-icon">
+
+            <i class="ti ti-map-pin"></i>
+
+          </div>
+
+          <div>
+
+            <h6>
+              Address
+            </h6>
+
+            <p>
+              Banglow No. 2 Konark Nagar 2,
+              Nashik, Maharashtra
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <hr>
+
+
+    <div class="row gy-5">
+
+
+      <div class="col-lg-4">
+
+        <img
+          src="assets/img/logo.png"
+          class="mb-3"
+          width="80"
+          alt="Kalash Beauty Parlour Logo"
+        >
+
+        <p class="footer-text">
+
+          Kalash Beauty Parlour offers premium
+          beauty treatments, skincare, bridal makeup,
+          hair styling and salon services with expert
+          care and a luxurious experience.
+
+        </p>
+
+
+        <div class="footer-social mt-4">
+
+          <a href="#" aria-label="Facebook">
+
+            <i class="ti ti-brand-facebook"></i>
+
+          </a>
+
+          <a href="#" aria-label="Instagram">
+
+            <i class="ti ti-brand-instagram"></i>
+
+          </a>
+
+          <a href="#" aria-label="WhatsApp">
+
+            <i class="ti ti-brand-whatsapp"></i>
+
+          </a>
+
+          <a href="#" aria-label="YouTube">
+
+            <i class="ti ti-brand-youtube"></i>
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-lg-2 col-md-4">
+
+        <h4>
+          Navigation
+        </h4>
+
+        <ul>
+
+          <li>
+            <a href="#home">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="#about">
+              About
+            </a>
+          </li>
+
+          <li>
+            <a href="#services">
+              Services
+            </a>
+          </li>
+
+          <li>
+            <a href="#results">
+              Gallery
+            </a>
+          </li>
+
+          <li>
+            <a href="#contact">
+              Contact
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="col-lg-3 col-md-4">
+
+        <h4>
+          Quick Links
+        </h4>
+
+        <ul>
+
+          <li>
+            <a href="#services">
+              Bridal Makeup
+            </a>
+          </li>
+
+          <li>
+            <a href="#services">
+              Hair Spa
+            </a>
+          </li>
+
+          <li>
+            <a href="#services">
+              Facial
+            </a>
+          </li>
+
+          <li>
+            <a href="#services">
+              Skin Care
+            </a>
+          </li>
+
+          <li>
+            <a href="#contact">
+              Book Appointment
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="col-lg-3 col-md-4">
+
+        <h4>
+          Work Hours
+        </h4>
+
+        <p>
+
+          <i class="ti ti-clock"></i>
+
+          Mon - Sat : 9 AM - 8 PM
+
+        </p>
+
+        <p>
+
+          <i class="ti ti-clock"></i>
+
+          Sunday : 10 AM - 4 PM
+
+        </p>
+
+        <p class="mt-3">
+
+          We are committed to providing
+          exceptional beauty services with
+          professional care.
+
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <hr>
+
+
+    <div class="copyright text-center">
+
+      © 2026 Kalash Beauty Parlour.
+      All Rights Reserved.
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- ==============================
+     WHATSAPP
+================================= -->
+
+<a
+  href="https://wa.me/919876543210?text=Hi%20Kalash%20Beauty%20Parlour%2C%20I%20have%20a%20question"
+  class="whatsapp-float"
+  target="_blank"
+  rel="noopener"
+  aria-label="Chat with us on WhatsApp"
+>
+
+  <i class="ti ti-brand-whatsapp"></i>
+
+  <span class="whatsapp-tooltip">
+    Chat with us
+  </span>
+
+</a>
+
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+
+/* =========================================
+   PRELOADER
+========================================= */
+
+window.addEventListener('load', function(){
+
+  const preloader =
+    document.getElementById('preloader');
+
+  if(preloader){
+
+    setTimeout(function(){
+
+      preloader.classList.add('loaded');
+
+      setTimeout(function(){
+
+        preloader.remove();
+
+      },600);
+
+    },400);
+
+  }
+
+});
+
+
+/* =========================================
+   STICKY NAVBAR
+========================================= */
+
+const mainNavbar =
+  document.getElementById('mainNavbar');
+
+function handleNavbarScroll(){
+
+  if(window.scrollY > 60){
+
+    mainNavbar.classList.add('scrolled');
+
+  }else{
+
+    mainNavbar.classList.remove('scrolled');
+
+  }
+
+}
+
+window.addEventListener(
+  'scroll',
+  handleNavbarScroll,
+  {passive:true}
+);
+
+handleNavbarScroll();
+
+
+/* =========================================
+   BEFORE / AFTER SLIDERS
+========================================= */
+
+document.querySelectorAll('.ba-wrap').forEach(function(wrapper){
+
+  const range =
+    wrapper.querySelector('input[type="range"]');
+
+  const before =
+    wrapper.querySelector('.ba-before');
+
+  const line =
+    wrapper.querySelector('.ba-line');
+
+  const handle =
+    wrapper.querySelector('.ba-handle');
+
+
+  function updateSlider(value){
+
+    const percentage =
+      Math.max(
+        0,
+        Math.min(100, Number(value))
+      );
+
+    before.style.width =
+      percentage + '%';
+
+    line.style.left =
+      percentage + '%';
+
+    handle.style.left =
+      percentage + '%';
+
+  }
+
+
+  if(range){
+
+    updateSlider(range.value);
+
+    range.addEventListener(
+      'input',
+      function(){
+
+        updateSlider(this.value);
+
+      }
+    );
+
+  }
+
+});
+
+
+/* =========================================
+   CONTACT FORM
+========================================= */
+
+const contactForm =
+  document.getElementById('contactForm');
+
+if(contactForm){
+
+  contactForm.addEventListener(
+    'submit',
+    function(event){
+
+      event.preventDefault();
+
+      const status =
+        document.getElementById('cfStatus');
+
+
+      if(!contactForm.checkValidity()){
+
+        contactForm.reportValidity();
+
+        return;
+
+      }
+
+
+      status.textContent =
+        "Thanks! Your message has been received. We'll get back to you soon.";
+
+      status.style.color =
+        '#2f7d3c';
+
+
+      contactForm.reset();
+
+    }
+  );
+
+}
+
+
+/* =========================================
+   ANIMATED COUNTERS
+========================================= */
+
+const counters =
+  document.querySelectorAll('.count');
+
+
+function animateCounter(element){
+
+  const target =
+    Number(element.getAttribute('data-target'));
+
+  const duration =
+    1600;
+
+  const startTime =
+    performance.now();
+
+
+  function step(currentTime){
+
+    const progress =
+      Math.min(
+        (currentTime - startTime) /
+        duration,
+        1
+      );
+
+
+    const eased =
+      1 -
+      Math.pow(
+        1 - progress,
+        3
+      );
+
+
+    element.textContent =
+      Math.floor(
+        eased * target
+      );
+
+
+    if(progress < 1){
+
+      requestAnimationFrame(step);
+
+    }else{
+
+      element.textContent =
+        target;
+
+    }
+
+  }
+
+
+  requestAnimationFrame(step);
+
+}
+
+
+if(counters.length){
+
+  const counterObserver =
+    new IntersectionObserver(
+      function(entries, observer){
+
+        entries.forEach(function(entry){
+
+          if(entry.isIntersecting){
+
+            animateCounter(
+              entry.target
+            );
+
+            observer.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+      {
+        threshold:.5
+      }
+    );
+
+
+  counters.forEach(function(counter){
+
+    counterObserver.observe(counter);
+
+  });
+
+}
+
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+const revealElements =
+  document.querySelectorAll('.reveal');
+
+
+if(revealElements.length){
+
+  const revealObserver =
+    new IntersectionObserver(
+      function(entries, observer){
+
+        entries.forEach(function(entry){
+
+          if(entry.isIntersecting){
+
+            entry.target.classList.add(
+              'active'
+            );
+
+            observer.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+      {
+        threshold:.15
+      }
+    );
+
+
+  revealElements.forEach(function(element){
+
+    revealObserver.observe(element);
+
+  });
+
+}
+
+
+/* =========================================
+   NAVIGATION SCROLL SPY
+========================================= */
+
+const sections =
+  document.querySelectorAll(
+    'section[id]'
+  );
+
+const navLinks =
+  document.querySelectorAll(
+    '.nav-links a'
+  );
+
+
+function updateActiveNav(){
+
+  let current = '';
+
+
+  sections.forEach(function(section){
+
+    const sectionTop =
+      section.offsetTop - 140;
+
+    const sectionHeight =
+      section.offsetHeight;
+
+
+    if(
+      window.scrollY >= sectionTop &&
+      window.scrollY <
+      sectionTop + sectionHeight
+    ){
+
+      current =
+        section.getAttribute('id');
+
+    }
+
+  });
+
+
+  navLinks.forEach(function(link){
+
+    link.classList.remove('active');
+
+
+    const href =
+      link.getAttribute('href');
+
+
+    if(
+      href === '#' + current
+    ){
+
+      link.classList.add('active');
+
+    }
+
+  });
+
+
+  if(window.scrollY < 100){
+
+    const homeLink =
+      document.querySelector(
+        '.nav-links a[href="#home"]'
+      );
+
+    if(homeLink){
+
+      homeLink.classList.add('active');
+
+    }
+
+  }
+
+}
+
+
+window.addEventListener(
+  'scroll',
+  updateActiveNav,
+  {passive:true}
+);
+
+updateActiveNav();
+
+
+/* =========================================
+   CLOSE MOBILE NAV AFTER CLICK
+========================================= */
+
+const mobileNav =
+  document.getElementById('navMenu');
+
+const mobileLinks =
+  document.querySelectorAll(
+    '#navMenu .nav-links a'
+  );
+
+
+mobileLinks.forEach(function(link){
+
+  link.addEventListener(
+    'click',
+    function(){
+
+      if(
+        window.innerWidth <= 991 &&
+        mobileNav.classList.contains('show')
+      ){
+
+        const collapse =
+          bootstrap.Collapse
+          .getInstance(mobileNav);
+
+        if(collapse){
+
+          collapse.hide();
+
+        }
+
+      }
+
+    }
+  );
+
+});
+
+</script>
+
+</body>
+</html>
